@@ -1,0 +1,18 @@
+# 若依 Web 功能测试环境配置
+# 修改本文件即可切换环境 / 浏览器 / 运行模式
+
+base_url: http://localhost:18081   # 若依前端地址（Vue 前端默认 80 端口）
+
+browser: chrome                 # 支持的浏览器: edge | chrome | firefox
+headless: false                 # 无头模式（CI 推荐 true，本机调试可设 false）
+binary_location: D:\chrome\chrome-win64\chrome.exe  # Chrome 浏览器路径（仅 chrome 需要）
+timeout: 10                     # 显式等待超时（秒）
+
+login:
+  username: admin               # 默认登录账号
+  password: admin123            # 默认登录密码
+  captcha_enabled: true         # 后端是否开启验证码；开启时框架自动从 Redis 读取答案
+
+redis:                          # 验证码缓存（与 API 项目方案一致，直连 Redis）
+  host: localhost
+  port: 6379
